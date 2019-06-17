@@ -8,3 +8,7 @@ Buycoins africa test questions
 - cd into root folder
 - run command: npm install
 - run command: npm run serve
+
+
+
+- or better still run from inside any static file server. Ciao
