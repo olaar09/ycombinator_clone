@@ -2,10 +2,16 @@ $primary_color: rgb(255, 102, 0);
 $color_white: white;
 $color_black: #000;
 $color_text: #828282;
+$color_bg: rgb(246, 246, 239);
+
+$break-small: 570px;
+$break-large: 1200px;
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 10pt;
   color: $color_text;
+  margin: 0;
   a {
     color: $color_text;
     text-decoration: none;
@@ -16,8 +22,12 @@ body {
 }
 #home {
   .home {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
+    background-color: $color_bg;
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
     &__header {
       background-color: $primary_color;
       height: 21px;
@@ -31,6 +41,9 @@ body {
         a {
           color: $color_black;
         }
+        @media screen and (max-width: $break-small) {
+          margin: unset;
+        }
       }
 
       &-left {
@@ -41,6 +54,14 @@ body {
         h2 {
           color: $color_black;
           font-size: 10pt;
+          @media screen and (max-width: $break-small) {
+            margin: 0;
+          }
+        }
+      }
+      @media screen and (max-width: $break-small) {
+        a {
+          font-size: 9pt;
         }
       }
       img {
@@ -49,6 +70,9 @@ body {
         align-self: flex-end;
         border: 1px $color_white solid;
         margin-right: 5px;
+        @media screen and (max-width: $break-small) {
+          align-self: center;
+        }
       }
       &-menus {
         .divider::after {
@@ -59,11 +83,22 @@ body {
           text-decoration: none;
         }
       }
+
+      @media screen and (max-width: $break-small) {
+        height: unset;
+        // width: 100%;
+      }
     }
     &__content {
-      background-color: rgb(246, 246, 239);
+      background-color: $color_bg;
+      margin-top: 10px;
+      padding: 10px;
+      @media screen and (max-width: $break-small) {
+        margin-top: 5px;
+        padding-top: 5px;
+      }
       &-row {
-        padding: 10px;
+        margin-top: 5px;
         display: flex;
         align-items: flex-start;
         &-icon {
@@ -71,6 +106,9 @@ body {
           width: 14px;
           height: 14px;
           background-image: url('https://news.ycombinator.com/grayarrow2x.gif');
+          @media screen and (max-width: $break-small) {
+            width: 20px;
+          }
         }
         &_title {
           margin-left: 5px;
@@ -81,11 +119,71 @@ body {
               font-size: 8pt;
               color: $color_text;
             }
+            @media screen and (max-width: $break-small) {
+              font-size: 10pt;
+              span {
+                font-size: 9pt;
+              }
+            }
           }
           &-misc {
             > * {
               font-size: 8pt;
             }
+          }
+        }
+      }
+    }
+    .more {
+      padding-left: 43px;
+      color: black;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    &__footer {
+      //  height: 100px;
+      margin-top: 10px;
+      background-color: $color_bg;
+      &-thick-divider {
+        border-width: 3px;
+        border-color: $primary_color;
+        border-style: solid;
+      }
+      .links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        a {
+          color: $color_black;
+          font-size: 8pt;
+          margin: 0 3px 0 3px;
+        }
+      }
+      .search {
+        padding-top: 15px;
+        width: 30%;
+        margin: 0 auto;
+        height: 30px;
+        padding-bottom: 10px;
+        input {
+          height: 30px;
+          width: 70%;
+          background-color: white;
+          -webkit-appearance: none;
+          border: none;
+        }
+        @media screen and (max-width: $break-small) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          height: 50px;
+          input {
+            height: 50px;
+            width: 90%;
           }
         }
       }
