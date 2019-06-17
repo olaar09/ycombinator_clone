@@ -1,0 +1,94 @@
+$primary_color: rgb(255, 102, 0);
+$color_white: white;
+$color_black: #000;
+$color_text: #828282;
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: $color_text;
+  a {
+    color: $color_text;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+#home {
+  .home {
+    width: 75%;
+    margin: 0 auto;
+    &__header {
+      background-color: $primary_color;
+      height: 21px;
+      padding: 2px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &-right {
+        margin-left: auto;
+        a {
+          color: $color_black;
+        }
+      }
+
+      &-left {
+        display: inline;
+        > * {
+          display: inline-block;
+        }
+        h2 {
+          color: $color_black;
+          font-size: 10pt;
+        }
+      }
+      img {
+        height: 90%;
+        display: inline-block;
+        align-self: flex-end;
+        border: 1px $color_white solid;
+        margin-right: 5px;
+      }
+      &-menus {
+        .divider::after {
+          content: ' | ';
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+    &__content {
+      background-color: rgb(246, 246, 239);
+      &-row {
+        padding: 10px;
+        display: flex;
+        align-items: flex-start;
+        &-icon {
+          text-decoration: none;
+          width: 14px;
+          height: 14px;
+          background-image: url('https://news.ycombinator.com/grayarrow2x.gif');
+        }
+        &_title {
+          margin-left: 5px;
+          &-text {
+            display: inline;
+            color: $color_black;
+            span {
+              font-size: 8pt;
+              color: $color_text;
+            }
+          }
+          &-misc {
+            > * {
+              font-size: 8pt;
+            }
+          }
+        }
+      }
+    }
+  }
+}
